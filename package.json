@@ -1,0 +1,52 @@
+{
+  "name": "express.ts",
+  "version": "1.0.0",
+  "private": true,
+  "author": {
+    "name": "Fahad Hossain",
+    "email": "fahad@avalonx.io",
+    "url": "https://avalonx.io"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fkgfahad/express.ts"
+  },
+  "keywords": [],
+  "engines": {
+    "node": "16",
+    "npm": "7"
+  },
+  "scripts": {
+    "start": "node dist/bin",
+    "test": "jest --config jest.config.json",
+    "build": "run-s compile ejs",
+    "dev": "run-p compile:w ejs start:w",
+    "ejs": "copyfiles -u 1 \"src/views/**/*.ejs\" dist",
+    "compile": "tsc",
+    "compile:w": "tsc -p tsconfig-dev.json -w",
+    "start:w": "nodemon dist/bin"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.2",
+    "@types/debug": "^4.1.7",
+    "@types/express": "^4.17.13",
+    "@types/http-errors": "^1.8.1",
+    "@types/jest": "^27.0.1",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^16.7.9",
+    "copyfiles": "^2.4.1",
+    "jest": "^27.1.0",
+    "nodemon": "^2.0.12",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^4.4.2"
+  }
+}

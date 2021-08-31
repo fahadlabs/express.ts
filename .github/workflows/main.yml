@@ -1,0 +1,14 @@
+name: Test for Production
+'on':
+  push:
+    branches:
+      - main
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Installing the dependencies
+        run: npm i
+      - name: Unit testing
+        run: npm test
