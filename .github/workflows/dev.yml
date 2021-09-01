@@ -27,5 +27,5 @@ jobs:
       - run: npm run build --if-present
       - run: npm test
       - run: rm -rf node_modules
-      - run: npm ci --onpy=production
+      - run: npm install --only=production
       - run: pm2 restart Express.ts
